@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle - Bot WhatsApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; color: white; background-color: #121212; }
+        img { width: 300px; height: 300px; margin-top: 20px; }
+        #status { font-size: 18px; margin-top: 20px; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Controle do Bot</h1>
+    <div id="status">Aguardando QR Code...</div>
+    <img id="qrImage" src="" alt="QR Code" style="display:none;">
+    
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    <script>
+        const socket = io('http://localhost:3000');
+
+        socket.on('qrCode', (qrCode) => {
+            const qrImage = document.getElementById('qrImage');
+            qrImage.src = qrCode;
+            qrImage.style.display = 'block';
+            document.getElementById('status').innerText = 'Escaneie o QR Code no WhatsApp.';
+        });
+
+        socket.on('status', (statusMessage) => {
+            document.getElementById('status').innerText = statusMessage;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços - Tecnologia e Automação</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('tech-background.jpg.jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .login-button {
+            background: #00ccff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        .login-button:hover {
+            background: #0088cc;
+            transform: scale(1.1);
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .service {
+            background: rgba(0, 0, 0, 0.8);
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+        }
+        .service img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background: #00ccff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background: #0088cc;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transforme Seu Negócio com Nossas Soluções Digitais</h1>
+        <p>Desenvolvemos tecnologia de ponta para alavancar suas vendas e otimizar sua comunicação.</p>
+        <a href="login.html" class="login-button">Login</a>
+    </header>
+    
+    <section class="services">
+        <div class="service">
+            <img src="site-dev.jpg" alt="Desenvolvimento de Sites">
+            <h2>Desenvolvimento de Sites</h2>
+            <p>Criação de sites modernos, responsivos e otimizados para SEO.</p>
+        </div>
+        <div class="service">
+            <img src="whatsapp-bot.jpg" alt="Bots para WhatsApp">
+            <h2>Bots para WhatsApp</h2>
+            <p>Automatize o atendimento e otimize a comunicação com clientes.</p>
+        </div>
+        <div class="service">
+            <img src="disparo-mensagens.jpg.jpeg" alt="Disparo de Mensagens">
+            <h2>Disparo de Mensagens</h2>
+            <p>Envie mensagens em massa para sua base de contatos de forma estratégica.</p>
+        </div>
+        <div class="service">
+            <img src="admin-bot.jpg.jpeg" alt="Bot Administrador de Grupos">
+            <h2>Bot Administrador de Grupos</h2>
+            <p>Gerencie grupos de WhatsApp com funções inteligentes e automáticas.</p>
+        </div>
+        <div class="service">
+            <img src="software-dev.jpg.jpeg" alt="Desenvolvimento de Programas">
+            <h2>Desenvolvimento de Programas</h2>
+            <p>Softwares personalizados para atender às necessidades do seu negócio.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <a href="https://wa.me/+5586998398162" class="whatsapp-float" target="_blank">📱</a>
+        <p>Entre em contato e leve seu negócio para o próximo nível!</p>
+        <a href="https://wa.me/5586998398162?text=Olá,%20gostaria%20de%20saber%20mais!" target="_blank">
+            <button>Fale Conosco</button>
+        </a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+/* Cabeçalho */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #25D366;
+    margin: 20px 0;
+}
+
+/* Botões */
+button {
+    background-color: #25D366;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1ebe57;
+}
+
+/* Status */
+#status {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #FFD700;
+}
+
+/* QR Code */
+#qrCode {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Inputs */
+input[type="file"], textarea {
+    margin: 10px;
+    padding: 10px;
+    background: #1f1f1f;
+    border: 1px solid #25D366;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Área de Mensagem */
+textarea {
+    width: 80%;
+    max-width: 400px;
+    height: 80px;
+    resize: none;
+}
+
+/* Seções */
+h2 {
+    font-size: 18px;
+    color: #25D366;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    button {
+        width: 90%;
+    }
+
+    textarea {
+        width: 90%;
+    }
+}

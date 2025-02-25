@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: url('login-background.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #00ccff;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #00ccff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background: #0088cc;
+            transform: scale(1.05);
+        }
+        #status {
+            font-size: 18px;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login - DC</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nome de Usuário" required><br>
+            <input type="password" id="password" placeholder="Senha" required><br>
+            <button type="submit">Entrar</button>
+        </form>
+        <div id="status"></div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+    <script>
+        // Conectar ao Socket.IO
+        const socket = io('http://localhost:3000');
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Enviar os dados de login para o servidor
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Ao fazer login, iniciar o bot
+                    socket.emit('startBot');
+                    window.location.href = '/index.html';  // Redireciona para a página de controle do bot
+                } else {
+                    document.getElementById('status').innerText = 'Credenciais inválidas.';
+                }
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Erro ao fazer login.';
+            });
+        });
+    </script>
+</body>
+</html>
