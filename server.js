@@ -22,7 +22,7 @@ app.use(session({
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname)); 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
 
 let client;
@@ -41,9 +41,12 @@ function verificarAutenticacao(req, res, next) {
 
 // Rota inicial (Home)
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/home.html');
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
 
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
 // Usuários de login (mock)
 const usuarios = [{ username: 'admin', password: '1234' }];
 
