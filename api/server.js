@@ -38,6 +38,16 @@ function verificarAutenticacao(req, res, next) {
         res.redirect('/login.html');
     }
 }
+
+
+app.get('/api/hello', (req, res) => {
+    res.json({ message: "Hello from Vercel!" });
+});
+
+// Exporta a função handler
+module.exports = app;
+
+
 // Rota principal
 module.exports = async (req, res) => {
     if (req.method === "POST") {
