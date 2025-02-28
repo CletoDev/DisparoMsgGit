@@ -1,2 +1,3 @@
-2025/02/28-07:24:33.753 2814 Creating DB C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\Site Characteristics Database since it was missing.
-2025/02/28-07:24:33.988 2814 Reusing MANIFEST C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\Site Characteristics Database/MANIFEST-000001
+2025/02/28-07:41:15.505 e10 Reusing MANIFEST C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\Site Characteristics Database/MANIFEST-000001
+2025/02/28-07:41:15.506 e10 Recovering log #3
+2025/02/28-07:41:15.507 e10 Reusing old log C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\Site Characteristics Database/000003.log 

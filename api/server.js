@@ -11,7 +11,12 @@ require('dotenv').config(); // Carrega as variáveis do arquivo .env
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, { cors: { origin: '*' } });
+const io = socketIo(server, {
+    cors: {
+        origin: "*",  // Permite conexões de qualquer domínio (mude conforme necessário)
+        methods: ["GET", "POST"]
+    }
+});
 const upload = multer({ storage: multer.memoryStorage() }); // Armazena o vídeo apenas na RAM
 
 app.use(session({

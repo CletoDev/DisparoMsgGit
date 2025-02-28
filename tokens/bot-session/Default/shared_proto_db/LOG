@@ -1,2 +1,3 @@
-2025/02/28-07:24:34.112 8cc Creating DB C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\shared_proto_db since it was missing.
-2025/02/28-07:24:34.199 8cc Reusing MANIFEST C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\shared_proto_db/MANIFEST-000001
+2025/02/28-07:41:15.772 348 Reusing MANIFEST C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\shared_proto_db/MANIFEST-000001
+2025/02/28-07:41:15.773 348 Recovering log #3
+2025/02/28-07:41:15.773 348 Reusing old log C:\ProjetosDev\DisparoMsgGit\tokens\bot-session\Default\shared_proto_db/000003.log 
